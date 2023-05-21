@@ -1,9 +1,9 @@
 package efs.task.oop;
 
+
 public class Villager implements Fighter{
     private String name;
     private int age;
-    private Boolean isDead=false;
     private int health=100;
 
     public Villager(String name, int age){
@@ -27,17 +27,13 @@ public class Villager implements Fighter{
         return this.health;
     }
 
-    public boolean getIsDead(){
-        return isDead;
-    }
-
     private int calcDamage(){
         double dmg = (100 - age * 0.5) / 10;
         return (int) dmg;
     }
     @Override
     public void attack(Fighter victim){
-        if(isDead != true) {
+        if(this.health > 0) {
             System.out.println("\nAktualnie walczacy osadnik to "+getName());
             int damage_v = calcDamage();
             victim.takeHit(damage_v);
@@ -48,8 +44,9 @@ public class Villager implements Fighter{
     public void takeHit(int damage){
         this.health -= damage;
         if (this.health <= 0){
-            isDead = true;
+            this.health = 0;
             System.out.println(getName()+" polegl w walce");
         }
     }
 }
+
