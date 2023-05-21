@@ -1,7 +1,7 @@
 package efs.task.oop;
 
 public class ExtraordinaryVillager extends Villager{
-    private boolean isDead;
+    private boolean isDead=false;
     public enum Skill{
         IDENTIFY("I will identify items for you at no charge."),
         SHELTER("I can offer you poor shelter.");
@@ -22,7 +22,6 @@ public class ExtraordinaryVillager extends Villager{
     public ExtraordinaryVillager(String name, int age, Skill skill){
         super(name, age);
         this.skill = skill;
-        this.isDead = false;
     }
 
     @Override
@@ -34,13 +33,14 @@ public class ExtraordinaryVillager extends Villager{
     public void attack(Fighter victim){
         if (isDead != true) {
             System.out.println("\nAktualnie walczacy osadnik to " + getName());
+            victim.takeHit(0);
         }
     }
 
     @Override
     public void takeHit(int damage){
         if(isDead == false) {
-            super.takeHit(damage);
+            super.takeHit(100);
             isDead = true;
             System.out.println(getName() + " polegl w walce");
         }
