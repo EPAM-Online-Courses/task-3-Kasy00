@@ -41,7 +41,6 @@ public class ExtraordinaryVillager extends Villager{
     public void takeHit(int damage){
         if(getHealth() > 0) {
             super.takeHit(100);
-            System.out.println(getName() + " polegl w walce");
         }
     }
 }
