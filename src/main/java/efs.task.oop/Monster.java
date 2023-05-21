@@ -3,12 +3,11 @@ package efs.task.oop;
 abstract class Monster implements Fighter{
     private int health;
     private int damage;
-    private Boolean isDead;
+    private Boolean isDead=false;
 
     protected Monster(int health, int damage){
         this.health = health;
         this.damage = damage;
-        this.isDead = false;
     }
     public int getHealth(){
         return this.health;
