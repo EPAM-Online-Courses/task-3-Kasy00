@@ -1,10 +1,9 @@
 package efs.task.oop;
 
+
 abstract class Monster implements Fighter{
     private int health;
     private int damage;
-    private Boolean isDead=false;
-
     public Monster(int health, int damage){
         this.health = health;
         this.damage = damage;
@@ -17,18 +16,15 @@ abstract class Monster implements Fighter{
         return this.damage;
     }
 
-    public Boolean getIsDead(){
-        return this.isDead;
-    }
     public void attack(Fighter victim){
-        if (isDead != true){
+        if (health > 0){
             victim.takeHit(damage);
         }
     }
     public void takeHit(int damage){
         this.health -= damage;
         if (this.health <= 0){
-            isDead = true;
+            this.health = 0;
         }
     }
 }
