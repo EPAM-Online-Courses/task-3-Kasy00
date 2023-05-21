@@ -3,14 +3,12 @@ package efs.task.oop;
 public class Villager implements Fighter{
     private String name;
     private int age;
-    private Boolean isDead;
-    private int health;
+    private Boolean isDead=false;
+    private int health=100;
 
     public Villager(String name, int age){
         this.name = name;
         this.age = age;
-        this.health = 100;
-        this.isDead = false;
     }
 
     public void sayHello(){
