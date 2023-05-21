@@ -1,3 +1,5 @@
+package efs.task.oop;
+
 public class ExtraordinaryVillager extends Villager{
     private boolean isDead;
     public enum Skill{
