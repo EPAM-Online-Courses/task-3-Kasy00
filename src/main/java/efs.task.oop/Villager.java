@@ -45,7 +45,6 @@ public class Villager implements Fighter{
         this.health -= damage;
         if (this.health <= 0){
             this.health = 0;
-            System.out.println(getName()+" polegl w walce");
         }
     }
 }
