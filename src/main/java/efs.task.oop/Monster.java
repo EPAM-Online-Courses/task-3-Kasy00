@@ -5,7 +5,7 @@ abstract class Monster implements Fighter{
     private int damage;
     private Boolean isDead=false;
 
-    protected Monster(int health, int damage){
+    public Monster(int health, int damage){
         this.health = health;
         this.damage = damage;
     }
